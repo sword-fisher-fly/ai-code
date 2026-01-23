@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 合并游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>2024 合并游戏</h1>
+
+        <div class="score-board">
+            <div class="score-box">
+                <div class="label">分数</div>
+                <div id="score" class="value">0</div>
+            </div>
+            <div class="score-box">
+                <div class="label">目标</div>
+                <div class="value">2024</div>
+            </div>
+        </div>
+
+        <div class="game-board" id="gameBoard"></div>
+
+        <div class="controls">
+            <div class="button-group">
+                <button id="newGame" class="btn btn-primary">新游戏</button>
+            </div>
+            <div class="instructions">
+                <p>使用方向键或WASD键移动方块</p>
+                <p>相同数字合并为目标数字</p>
+            </div>
+        </div>
+
+        <div id="gameMessage" class="message hidden"></div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

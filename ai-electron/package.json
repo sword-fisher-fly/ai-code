@@ -1,0 +1,38 @@
+{
+  "name": "merge2048-electron",
+  "version": "1.0.0",
+  "description": "2024 Merge Game built with Go and Electron",
+  "main": "frontend/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:linux": "electron-builder --linux",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.merge2048.app",
+    "productName": "Merge2048",
+    "directories": {
+      "output": "build"
+    },
+    "files": [
+      "game/**/*",
+      "frontend/**/*",
+      "main"
+    ],
+    "linux": {
+      "target": "AppImage"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.6.4"
+  }
+}

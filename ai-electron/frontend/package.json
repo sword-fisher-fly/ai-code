@@ -1,0 +1,48 @@
+{
+  "name": "merge2048-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for 2024 Merge Game",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "echo 'Frontend build complete'",
+    "pack": "electron-builder --dir",
+    "dist": "npm run build && electron-builder",
+    "build:linux": "npm run build && electron-builder --linux",
+    "build:mac": "npm run build && electron-builder --mac",
+    "build:win": "npm run build && electron-builder --win"
+  },
+  "build": {
+    "appId": "com.merge2048.app",
+    "productName": "Merge2048",
+    "directories": {
+      "output": "build"
+    },
+    "files": [
+      "main.js",
+      "renderer/**/*"
+    ],
+    "linux": {
+      "target": "AppImage",
+      "category": "Game"
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.games"
+    },
+    "win": {
+      "target": "nsis",
+      "publisherName": "Merge2048"
+    }
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {
+    "electron-is-dev": "^2.0.0"
+  }
+}
