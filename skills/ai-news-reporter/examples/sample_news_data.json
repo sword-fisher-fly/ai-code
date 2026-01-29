@@ -1,0 +1,47 @@
+[
+  {
+    "source": "TechCrunch",
+    "title": "OpenAI Announces GPT-5 with Enhanced Reasoning Capabilities",
+    "link": "https://techcrunch.com/category/artificial-intelligence/",
+    "pubDate": "Sun, 26 Jan 2026 10:30:00 +0000",
+    "summary": "OpenAI宣布推出GPT-5，在推理能力方面取得重大突破。新模型在复杂问题解决和逻辑推理任务上性能显著提升，为AI技术带来新进展。",
+    "keywords": ["OpenAI", "GPT-5", "AI技术", "产品发布"],
+    "timestamp": "2026-01-26T10:30:00"
+  },
+  {
+    "source": "VentureBeat",
+    "title": "AI Startup Raises $100M Series B for Autonomous Vehicle Technology",
+    "link": "https://venturebeat.com/category/ai/",
+    "pubDate": "Sun, 26 Jan 2026 09:15:00 +0000",
+    "summary": "一家专注自动驾驶技术的AI初创公司完成1亿美元B轮融资，将用于推进无人驾驶技术的研发和商业化，关注行业发展。",
+    "keywords": ["AI", "投资动态", "自动驾驶", "初创公司"],
+    "timestamp": "2026-01-26T09:15:00"
+  },
+  {
+    "source": "MIT Technology Review",
+    "title": "Breakthrough in Quantum Machine Learning Research",
+    "link": "https://www.technologyreview.com/topic/artificial-intelligence/",
+    "pubDate": "Sat, 25 Jan 2026 16:45:00 +0000",
+    "summary": "MIT研究团队在量子机器学习领域取得突破性进展，新算法在处理复杂数据集时效率提升10倍，推动技术突破。",
+    "keywords": ["研究进展", "机器学习", "量子计算", "MIT"],
+    "timestamp": "2026-01-25T16:45:00"
+  },
+  {
+    "source": "The Verge",
+    "title": "Google Unveils Gemini Ultra 2.0 with Multimodal Capabilities",
+    "link": "https://www.theverge.com/ai-artificial-intelligence/",
+    "pubDate": "Sat, 25 Jan 2026 14:20:00 +0000",
+    "summary": "谷歌发布Gemini Ultra 2.0模型，具备强大的多模态能力，可同时处理文本、图像和音频，推动AI技术进步。",
+    "keywords": ["谷歌", "Gemini", "多模态", "产品发布"],
+    "timestamp": "2026-01-25T14:20:00"
+  },
+  {
+    "source": "Wired",
+    "title": "The Ethics of AI in Healthcare: A Comprehensive Analysis",
+    "link": "https://www.wired.com/tag/ai/",
+    "pubDate": "Sat, 25 Jan 2026 12:00:00 +0000",
+    "summary": "专家深度分析AI在医疗领域的伦理问题，探讨算法透明度、患者隐私和医疗决策中的AI应用挑战，关注政策监管。",
+    "keywords": ["AI", "医疗", "伦理", "政策监管"],
+    "timestamp": "2026-01-25T12:00:00"
+  }
+]
