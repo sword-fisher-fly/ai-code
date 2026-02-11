@@ -1,0 +1,260 @@
+.gobang-container {
+  display: flex;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  margin-right: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.timer-section {
+  margin-bottom: 40px;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 40px;
+  margin: 15px 0;
+  background: #f0f0f0;
+  border-radius: 12px;
+  border: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.timer.active {
+  border-color: #667eea;
+  background: #e8eaf6;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.timer.warning {
+  background: #ffebee;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.timer-label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.timer-value {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  color: #667eea;
+}
+
+.restart-btn {
+  padding: 15px 40px;
+  font-size: 18px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.restart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.restart-btn:active {
+  transform: translateY(0);
+}
+
+.status {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.winner-text {
+  color: #e91e63;
+}
+
+.right-panel {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board {
+  background: #f9d423;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.board-row {
+  display: flex;
+}
+
+.board-cell {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.board-cell::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(to right, #333 0%, #333 100%);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+
+.board-cell::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: #333;
+  pointer-events: none;
+}
+
+.board-row:first-child .board-cell::after {
+  top: 50%;
+}
+
+.board-row:last-child .board-cell::after {
+  bottom: 50%;
+}
+
+.board-cell:first-child::before {
+  left: 50%;
+}
+
+.board-cell:last-child::before {
+  right: 50%;
+}
+
+.piece {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.piece.black {
+  background: radial-gradient(circle at 30% 30%, #666, #000);
+}
+
+.piece.white {
+  background: radial-gradient(circle at 30% 30%, #fff, #ddd);
+}
+
+.board-cell:hover .piece:not(.placed) {
+  transform: scale(1.1);
+}
+
+/* 胜负弹窗 */
+.win-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.win-dialog-content {
+  background: linear-gradient(135deg, #f44336 0%, #e91e63 100%);
+  padding: 40px 60px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 60px rgba(244, 67, 54, 0.5);
+  animation: scaleIn 0.4s ease;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.lightning {
+  font-size: 80px;
+  animation: lightningFlash 0.5s infinite alternate;
+  margin-bottom: 20px;
+}
+
+@keyframes lightningFlash {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #ffeb3b;
+    transform: scale(1);
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 40px #ffeb3b, 0 0 60px #ffeb3b;
+    transform: scale(1.1);
+  }
+}
+
+.winner-announcement {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.win-dialog-content button {
+  padding: 15px 40px;
+  font-size: 18px;
+  background: white;
+  color: #f44336;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.win-dialog-content button:hover {
+  transform: scale(1.05);
+}
